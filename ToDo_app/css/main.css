@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+}
+
+ul {
+  padding-left: 0;
+  display: inline-block;
+}
+
+li {
+  margin-top: 10px;
+  justify-content: space-between;
+  display: flex;
+}
+
+button {
+  margin-left: 5px;
+}

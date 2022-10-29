@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef, no-unused-vars
 const app = new Vue({
-  el: "#ToDoApp",
-  data: function () {
+  el: "#todo-app",
+  data() {
     return {
       textInput: "",
       todos: [],
@@ -11,6 +11,14 @@ const app = new Vue({
   },
   mounted() {
     this.todos = JSON.parse(localStorage.getItem("TodoList")) || [];
+  },
+  computed: {
+    isAdditionalForm() {
+      return this.formState === "add";
+    },
+    isEditForm() {
+      return this.formState === "edit";
+    },
   },
   methods: {
     saveTodo() {

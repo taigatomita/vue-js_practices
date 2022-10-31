@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <h1>ToDoリスト</h1>
+    <div id="todo-app">
+      <form>
+        <input type="text" v-model="textInput" required />
+        <button v-if="isAdditionalForm" @click="addTodo">追加</button>
+        <button v-if="isEditForm" @click="editTodo">編集</button>
+      </form>
+      <ul v-if="todos.length > 0">
+        <li v-for="(todo, index) in todos">
+          {{ todo.text }}
+          <div>
+            <button @click="changeToEditForm(index)">編集</button>
+            <button @click="deleteTodo(index)">削除</button>
+          </div>
+        </li>
+      </ul>
+      <p v-else>ToDoはありません</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
